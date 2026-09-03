@@ -3,12 +3,14 @@
 # SPDX-License-Identifier: LicenseRef-CeraForm-Academic-NC
 #
 # Metadados de citação para GitHub e Zenodo (Citation File Format 1.2.0).
-# Filiação, ORCID e e-mail de Luís Antônio da Silva: preencher quando fornecidos.
+# Titulares: pessoas físicas. Autoria em partes iguais (50% cada).
+# Registro no INPI em nome dos autores, sem cessionário institucional.
 
 cff-version: 1.2.0
 title: CeraForm
 message: >-
   Se utilizar este software, cite-o com os metadados deste arquivo.
+  Autoria em partes iguais (50% cada). Titulares: pessoas físicas.
 type: software
 abstract: >-
   CeraForm é um sistema computacional para modelagem morfológica,
@@ -16,12 +18,18 @@ abstract: >-
   Substitui a aproximação por arcos circulares do programa legado por
   interpolação cúbica monótona (PCHIP de Fritsch–Carlson) e polinômios
   de Hermite. Destina-se a ensino, pesquisa e uso acadêmico não comercial.
+  Titulares pessoas físicas, autoria em partes iguais (50% cada).
 authors:
   - family-names: Oliveira
     given-names: "Cláudia Alves de"
-    affiliation: Universidade Federal de Pernambuco (UFPE)
+    email: claudia.oliveira@ufpe.br
+    orcid: "https://orcid.org/0000-0002-3587-327X"
+    website: "http://lattes.cnpq.br/7567746765435723"
   - family-names: Silva
     given-names: "Luís Antônio da"
+    email: luis.silva.arqueologo@gmail.com
+    orcid: "https://orcid.org/0009-0006-9660-9735"
+    website: "http://lattes.cnpq.br/0945424503706599"
 keywords:
   - cerâmica arqueológica
   - reconstituição geométrica
@@ -32,3 +40,10 @@ keywords:
 version: "1.0.0"
 date-released: "2026-09-03"
 license: LicenseRef-CeraForm-Academic-NC
+contact:
+  - family-names: Oliveira
+    given-names: "Cláudia Alves de"
+    email: claudia.oliveira@ufpe.br
+  - family-names: Silva
+    given-names: "Luís Antônio da"
+    email: luis.silva.arqueologo@gmail.com

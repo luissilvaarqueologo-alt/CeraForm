@@ -3,6 +3,11 @@ CERAFORM — RECONSTITUIÇÃO GEOMÉTRICA DE CERÂMICA (Versão 1.0)
 ===================================================================================================================================
 Autora (Idealização e Metodologia Arqueológica): Cláudia Alves de Oliveira
 Autor  (Arquitetura e Desenvolvimento de Software): Luís Antônio da Silva
+Titulares: pessoas físicas, autoria em partes iguais (50% cada). Sem cessionário institucional.
+
+Cláudia Alves de Oliveira — ORCID https://orcid.org/0000-0002-3587-327X — Currículo Lattes http://lattes.cnpq.br/7567746765435723 — E-mail claudia.oliveira@ufpe.br
+Luís Antônio da Silva — ORCID https://orcid.org/0009-0006-9660-9735 — Currículo Lattes http://lattes.cnpq.br/0945424503706599 — E-mail luis.silva.arqueologo@gmail.com
+
 Ano de Desenvolvimento: 2026
 Linguagem e Tecnologias: Python 3.11+ | NumPy | SQLite | Matplotlib | PyVista / Plotly
 

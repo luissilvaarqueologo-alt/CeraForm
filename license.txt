@@ -2,6 +2,8 @@
 
 Copyright (c) 2026 OLIVEIRA, Cláudia Alves de; SILVA, Luís Antônio da. Todos os direitos reservados.
 
+Titulares: pessoas físicas Cláudia Alves de Oliveira e Luís Antônio da Silva, autoria em partes iguais (50% cada). O programa não é registrado em nome de pessoa jurídica.
+
 1. CONCESSÃO DE USO: É concedida permissão, a título gratuito, para usar, executar e testar este software exclusivamente para fins de pesquisa científica, ensino e atividades acadêmicas sem fins lucrativos.
 
 2. RESTRIÇÃO COMERCIAL: O uso deste software, no todo ou em parte, para fins comerciais, industriais, serviços pagos ou integrados a produtos comerciais é estritamente proibido sem autorização prévia formal dos autores.

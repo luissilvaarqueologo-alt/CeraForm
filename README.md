@@ -64,6 +64,8 @@ Baixe o arquivo `CeraForm_Windows.zip` na aba **Releases** deste repositório no
 
 O depósito de programa de computador no INPI usa o **código-fonte** (hash do zip `CeraForm_fonte_INPI.zip`), não o instalador Windows. A pasta e o zip do INPI ficam fora deste repositório; o conteúdo depositado corresponde à versão 1.0.0 aqui etiquetada.
 
+O pedido é feito em nome das **pessoas físicas** autoras, com **50%** de titularidade para cada uma, sem cessionário institucional (pessoa jurídica).
+
 O número do registro, quando publicado pelo INPI, deve ser anotado neste README.
 
 ## Citação acadêmica
@@ -76,8 +78,17 @@ O DOI permanente será o atribuído pelo Zenodo à versão 1.0.0, após a integr
 
 ## Autoria
 
-- **Cláudia Alves de Oliveira** — idealização e metodologia arqueológica (Universidade Federal de Pernambuco)
-- **Luís Antônio da Silva** — arquitetura e desenvolvimento de software
+Titulares **pessoas físicas**, autoria em partes iguais (**50%** cada). O programa não é registrado em nome de pessoa jurídica.
+
+- **Cláudia Alves de Oliveira** — idealização e metodologia arqueológica  
+  ORCID: [https://orcid.org/0000-0002-3587-327X](https://orcid.org/0000-0002-3587-327X)  
+  Currículo Lattes: [http://lattes.cnpq.br/7567746765435723](http://lattes.cnpq.br/7567746765435723)  
+  E-mail: claudia.oliveira@ufpe.br
+
+- **Luís Antônio da Silva** — arquitetura e desenvolvimento de software  
+  ORCID: [https://orcid.org/0009-0006-9660-9735](https://orcid.org/0009-0006-9660-9735)  
+  Currículo Lattes: [http://lattes.cnpq.br/0945424503706599](http://lattes.cnpq.br/0945424503706599)  
+  E-mail: luis.silva.arqueologo@gmail.com
 
 ## Licença
 

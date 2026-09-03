@@ -1,0 +1,13 @@
+﻿TERMOS DE USO E LICENÇA ACADÊMICA NÃO COMERCIAL - CERAFORM
+
+Copyright (c) 2026 OLIVEIRA, Cláudia Alves de; SILVA, Luís Antônio da. Todos os direitos reservados.
+
+1. CONCESSÃO DE USO: É concedida permissão, a título gratuito, para usar, executar e testar este software exclusivamente para fins de pesquisa científica, ensino e atividades acadêmicas sem fins lucrativos.
+
+2. RESTRIÇÃO COMERCIAL: O uso deste software, no todo ou em parte, para fins comerciais, industriais, serviços pagos ou integrados a produtos comerciais é estritamente proibido sem autorização prévia formal dos autores.
+
+3. OBRIGAÇÃO DE CITAÇÃO: Quaisquer publicações acadêmicas, artigos, teses, dissertações ou relatórios técnicos que utilizem resultados gerados por este software devem obrigatoriamente citar o programa e seus autores.
+
+4. REDISTRIBUIÇÃO: É permitida a redistribuição deste software desde que mantidos integralmente este aviso de copyright e todos os créditos aos autores originais.
+
+5. ISENÇÃO DE GARANTIA: O software é fornecido "no estado em que se encontra" (as is), sem garantias de qualquer tipo, expressas ou implícitas.

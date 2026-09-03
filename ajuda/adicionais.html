@@ -1,0 +1,241 @@
+<!--
+=======================================================================
+MÓDULO DE RECONSTITUIÇÃO GEOMÉTRICA DE CERÂMICAS - CERAFORM
+=======================================================================
+Autora (Idealização e Metodologia Arqueológica): Profa. Dra. Cláudia Alves de Oliveira
+Autor (Arquitetura e Desenvolvimento de Software): Luís Antônio da Silva
+Ano de Desenvolvimento: 2026
+Linguagem e Tecnologias: Python 3.11+ | NumPy | SQLite | Matplotlib | PyVista / Plotly
+Descrição Técnica:
+O CeraForm é um sistema computacional para modelagem morfológica, cálculo volumétrico e reconstituição 2D/3D de cerâmicas arqueológicas. Substitui a aproximação por arcos circulares legados por uma nova formulação matemática baseada em interpolação cúbica monótona (PCHIP de Fritsch–Carlson) e polinômios de Hermite, garantindo continuidade suave, ausência de oscilações espúrias e precisão nas descontinuidades reais (carenas).
+=======================================================================
+Licença e Termos de Uso
+CeraForm é disponibilizado gratuitamente para fins exclusivos de ensino, pesquisa e uso acadêmico não comercial.
+É expressamente vedado qualquer uso comercial, direto ou indireto, sem prévia autorização por escrito dos autores.
+Citação Obrigatória: Todo trabalho, publicação, relatório ou artigo derivado do uso deste software deve citar obrigatoriamente a fonte e seus autores.
+© 2026 Cláudia Alves de Oliveira & Luís Antônio da Silva. Todos os direitos reservados.
+=======================================================================
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Ajuda — carena, composto e planta</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header class="letterhead">
+  <h1>Módulo de reconstituição geométrica de cerâmicas</h1>
+  <div class="meta">
+    Autora (Idealização e Metodologia Arqueológica): Profa. Dra. Cláudia Alves de Oliveira · 2026 ·
+    Autor (Arquitetura e Desenvolvimento de Software): Luís Antônio da Silva
+  </div>
+</header>
+<nav>
+  <a href="index.html">Início</a>
+  <a href="nucleo.html">Núcleo mínimo</a>
+  <a href="extras.html">Medições extras</a>
+  <a class="atual" href="adicionais.html">Carena, composto e planta</a>
+</nav>
+
+<h2>Cintura, espessura, planta, carena e composto</h2>
+<p class="lead">
+  Ainda no desenho técnico de reconstituição. Cada figura indica o plano ou a aresta
+  de onde sair a cota. Diâmetros internos; alturas desde a linha de apoio da base.
+</p>
+
+<h3>Diâmetro da cintura e espessura da parede</h3>
+<div class="row2">
+  <div>
+    <h4>Diâmetro da cintura</h4>
+    <div class="panel">
+      <svg viewBox="0 0 260 230" aria-label="Cintura no perfil">
+        <line x1="130" y1="16" x2="130" y2="200" stroke="#888" stroke-dasharray="8 3 2 3"/>
+        <path d="M 96 20 C 88 40, 48 70, 48 90 C 48 118, 88 130, 96 148 C 104 168, 100 188, 100 200 L 160 200 C 160 188, 156 168, 164 148 C 172 130, 212 118, 212 90 C 212 70, 172 40, 164 20 Z"
+              fill="#d7e3ec" stroke="#1a1512" stroke-width="1.6"/>
+        <line x1="88" y1="118" x2="172" y2="118" stroke="#9a3412" stroke-width="1.6"/>
+        <text x="130" y="112" text-anchor="middle" fill="#9a3412" font-size="11" font-family="Times New Roman, Times, serif" font-weight="700">diâmetro da cintura</text>
+      </svg>
+    </div>
+    <p class="caption">Estreitamento do perfil (não é necessariamente a meia altura).</p>
+  </div>
+  <div>
+    <h4>Espessura da parede</h4>
+    <div class="panel">
+      <svg viewBox="0 0 260 230" aria-label="Espessura da parede no corte">
+        <defs>
+          <pattern id="h" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="0" y2="6" stroke="#5a5348" stroke-width="0.55"/>
+          </pattern>
+        </defs>
+        <rect x="40" y="20" width="180" height="180" fill="#f7f1e4" stroke="#d2c4ae"/>
+        <path d="M 70 40 L 70 180 L 190 180 L 190 40 L 168 40 L 168 162 L 92 162 L 92 40 Z"
+              fill="url(#h)" stroke="#1a1512" stroke-width="1.4"/>
+        <g stroke="#9a3412" fill="#9a3412" stroke-width="1.3">
+          <line x1="70" y1="88" x2="92" y2="88"/>
+          <polygon points="70,88 76,84.5 76,91.5"/><polygon points="92,88 86,84.5 86,91.5"/>
+        </g>
+        <text x="130" y="84" text-anchor="middle" fill="#9a3412" font-size="12" font-family="Times New Roman, Times, serif" font-weight="700">espessura da parede</text>
+        <text x="130" y="216" text-anchor="middle" fill="#555" font-size="10" font-family="Times New Roman, Times, serif">no corte, da face interna à face externa</text>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<h3>Vista de cima — comprimento e largura da planta</h3>
+<p class="caption">Só quando o contorno (vista de cima) não é circular. Meça os eixos no desenho da planta (vista de cima).</p>
+<div class="row2">
+  <div class="panel">
+    <svg viewBox="0 0 280 210" aria-label="Planta oval">
+      <ellipse cx="140" cy="105" rx="100" ry="58" fill="#d7e3ec" stroke="#1a1512" stroke-width="1.6"/>
+      <line x1="40" y1="105" x2="240" y2="105" stroke="#9a3412" stroke-width="1.3"/>
+      <line x1="140" y1="47" x2="140" y2="163" stroke="#9a3412" stroke-width="1.3"/>
+      <text x="140" y="28" text-anchor="middle" fill="#9a3412" font-size="12" font-family="Times New Roman, Times, serif" font-weight="700">comprimento (vista de cima)</text>
+      <text x="140" y="178" text-anchor="middle" fill="#9a3412" font-size="11" font-family="Times New Roman, Times, serif" font-weight="700">largura</text>
+    </svg>
+  </div>
+  <div class="panel">
+    <svg viewBox="0 0 280 210" aria-label="Planta quadrangular">
+      <rect x="55" y="48" width="170" height="114" fill="#d7e3ec" stroke="#1a1512" stroke-width="1.6"/>
+      <line x1="55" y1="38" x2="225" y2="38" stroke="#9a3412" stroke-width="1.3"/>
+      <line x1="44" y1="48" x2="44" y2="162" stroke="#9a3412" stroke-width="1.3"/>
+      <text x="140" y="28" text-anchor="middle" fill="#9a3412" font-size="12" font-family="Times New Roman, Times, serif" font-weight="700">comprimento (vista de cima)</text>
+      <text x="44" y="178" text-anchor="middle" fill="#9a3412" font-size="11" font-family="Times New Roman, Times, serif" font-weight="700">largura</text>
+    </svg>
+  </div>
+</div>
+
+<h3>Carena e segunda quebra</h3>
+<div class="row2">
+  <div>
+    <h4>Carenado simples — uma quebra</h4>
+    <div class="panel">
+      <svg viewBox="-70 0 330 220" aria-label="Carenado simples — uma quebra">
+        <line x1="130" y1="14" x2="130" y2="188" stroke="#888" stroke-dasharray="8 3 2 3"/>
+        <path d="M 100 20 L 52 108 L 100 188 L 160 188 L 208 108 L 160 20 Z" fill="#d7e3ec" stroke="#1a1512" stroke-width="1.6"/>
+        <line x1="52" y1="108" x2="208" y2="108" stroke="#9a3412" stroke-width="1.5"/>
+        <line x1="28" y1="20" x2="28" y2="108" stroke="#9a3412" stroke-width="1.3"/>
+        <text x="130" y="96" text-anchor="middle" fill="#9a3412" font-size="11" font-family="Times New Roman, Times, serif" font-weight="700">diâmetro da carena</text>
+        <text x="62" y="64" text-anchor="end" fill="#9a3412" font-size="10" font-family="Times New Roman, Times, serif" font-weight="700">
+          <tspan x="62" dy="0">altura</tspan>
+          <tspan x="62" dy="11">da carena</tspan>
+        </text>
+      </svg>
+    </div>
+    <p class="caption">A quebra do perfil (aresta). Altura desde a base; diâmetro interno nesse plano.</p>
+  </div>
+  <div>
+    <h4>Carenado duplo — duas quebras</h4>
+    <div class="panel">
+      <svg viewBox="-70 0 330 220" aria-label="Carenado duplo — duas quebras">
+        <line x1="130" y1="14" x2="130" y2="188" stroke="#888" stroke-dasharray="8 3 2 3"/>
+        <path d="M 108 18 L 56 78 L 78 118 L 102 188 L 158 188 L 182 118 L 204 78 L 152 18 Z" fill="#d7e3ec" stroke="#1a1512" stroke-width="1.6"/>
+        <line x1="56" y1="78" x2="204" y2="78" stroke="#9a3412" stroke-width="1.4"/>
+        <line x1="78" y1="118" x2="182" y2="118" stroke="#9a3412" stroke-width="1.4"/>
+        <line x1="24" y1="18" x2="24" y2="78" stroke="#9a3412" stroke-width="1.2"/>
+        <line x1="40" y1="18" x2="40" y2="118" stroke="#9a3412" stroke-width="1.2"/>
+        <text x="130" y="72" text-anchor="middle" fill="#9a3412" font-size="10" font-family="Times New Roman, Times, serif" font-weight="700">diâmetro da 1ª carena</text>
+        <text x="130" y="112" text-anchor="middle" fill="#9a3412" font-size="10" font-family="Times New Roman, Times, serif" font-weight="700">diâmetro da 2ª carena</text>
+        <text x="62" y="48" text-anchor="end" fill="#9a3412" font-size="9" font-family="Times New Roman, Times, serif" font-weight="700">
+          <tspan x="62" dy="0">altura</tspan>
+          <tspan x="62" dy="10">1ª carena</tspan>
+        </text>
+        <text x="78" y="96" text-anchor="end" fill="#9a3412" font-size="9" font-family="Times New Roman, Times, serif" font-weight="700">
+          <tspan x="78" dy="0">altura</tspan>
+          <tspan x="78" dy="10">2ª carena</tspan>
+        </text>
+      </svg>
+    </div>
+    <p class="caption">Carena (1ª quebra) e segunda quebra: altura e diâmetro de cada uma.</p>
+  </div>
+</div>
+
+<h3>Perfil composto — junção bojo–pescoço</h3>
+<p class="caption">
+  Quando o perfil geométrico é Composto: um trecho no bojo (junto à base) e outro no pescoço
+  (junto à borda) — as duas listas são obrigatórias nesse caso. A junção é o plano em que os dois trechos se encontram.
+  A altura e o diâmetro da junção também entram no desenho com perfil Convexo
+  (sem ser Composto): a parede passa por esse plano. A altura da junção fica
+  entre a barriga e a borda — não use a mesma cota do maior diâmetro.
+</p>
+<div class="row2">
+  <div class="panel">
+    <svg viewBox="-70 0 400 248" aria-label="Perfil composto — junção bojo e pescoço">
+      <line x1="140" y1="12" x2="140" y2="210" stroke="#888" stroke-dasharray="8 3 2 3"/>
+      <path d="M 118 16 L 118 78 C 78 94, 58 126, 58 154 C 58 184, 92 206, 118 206 L 162 206 C 188 206, 222 184, 222 154 C 222 126, 202 94, 162 78 L 162 16 Z"
+            fill="#d7e3ec" stroke="#1a1512" stroke-width="1.6"/>
+      <path d="M 118 16 L 118 78 L 162 78 L 162 16 Z" fill="#1a56db" fill-opacity="0.07" stroke="#1a56db" stroke-width="1" stroke-dasharray="5 3"/>
+      <path d="M 118 78 C 78 94, 58 126, 58 154 C 58 184, 92 206, 118 206 L 162 206 C 188 206, 222 184, 222 154 C 222 126, 202 94, 162 78 Z" fill="#1a56db" fill-opacity="0.07" stroke="#1a56db" stroke-width="1" stroke-dasharray="5 3"/>
+      <line x1="58" y1="206" x2="222" y2="206" stroke="#1a1512" stroke-width="2"/>
+      <line x1="118" y1="78" x2="162" y2="78" stroke="#9a3412" stroke-width="1.8"/>
+      <line x1="58" y1="154" x2="222" y2="154" stroke="#888" stroke-width="0.8" stroke-dasharray="3 4"/>
+      <g stroke="#9a3412" fill="#9a3412" stroke-width="1.3">
+        <line x1="58" y1="170" x2="222" y2="170"/>
+        <polygon points="58,170 64.5,166.5 64.5,173.5"/>
+        <polygon points="222,170 215.5,166.5 215.5,173.5"/>
+      </g>
+      <text x="140" y="186" text-anchor="middle" fill="#9a3412" font-size="10" font-family="Times New Roman, Times, serif" font-weight="700">maior diâmetro do bojo</text>
+      <line x1="58" y1="170" x2="58" y2="154" stroke="#888" stroke-width="0.7"/>
+      <line x1="222" y1="170" x2="222" y2="154" stroke="#888" stroke-width="0.7"/>
+      <g stroke="#9a3412" fill="#9a3412" stroke-width="1.3">
+        <line x1="118" y1="68" x2="162" y2="68"/>
+        <polygon points="118,68 121.5,64.5 121.5,71.5"/>
+        <polygon points="162,68 158.5,64.5 158.5,71.5"/>
+      </g>
+      <text x="140" y="62" text-anchor="middle" fill="#9a3412" font-size="10" font-family="Times New Roman, Times, serif" font-weight="700">diâmetro da junção</text>
+      <line x1="118" y1="68" x2="118" y2="78" stroke="#888" stroke-width="0.7"/>
+      <line x1="162" y1="68" x2="162" y2="78" stroke="#888" stroke-width="0.7"/>
+      <text x="140" y="52" text-anchor="middle" fill="#555" font-size="10" font-family="Times New Roman, Times, serif">pescoço</text>
+      <text x="140" y="168" text-anchor="middle" fill="#555" font-size="10" font-family="Times New Roman, Times, serif">bojo</text>
+      <path d="M 228 18 L 244 18 L 244 74 L 228 74" fill="none" stroke="#1a56db" stroke-width="1.1"/>
+      <line x1="162" y1="46" x2="228" y2="46" stroke="#1a56db" stroke-width="0.9"/>
+      <line x1="244" y1="46" x2="258" y2="46" stroke="#1a56db" stroke-width="0.9"/>
+      <text x="260" y="42" fill="#1a56db" font-size="9" font-family="Times New Roman, Times, serif" font-weight="700">
+        <tspan x="260" dy="0">Perfil do trecho</tspan>
+        <tspan x="260" dy="10">junto à borda</tspan>
+      </text>
+      <path d="M 228 84 L 244 84 L 244 200 L 228 200" fill="none" stroke="#1a56db" stroke-width="1.1"/>
+      <line x1="222" y1="150" x2="228" y2="150" stroke="#1a56db" stroke-width="0.9"/>
+      <line x1="244" y1="150" x2="258" y2="150" stroke="#1a56db" stroke-width="0.9"/>
+      <text x="260" y="146" fill="#1a56db" font-size="9" font-family="Times New Roman, Times, serif" font-weight="700">
+        <tspan x="260" dy="0">Perfil do trecho</tspan>
+        <tspan x="260" dy="10">junto à base</tspan>
+      </text>
+    </svg>
+    <p class="caption">
+      Trechos em azul tracejado: perfil geométrico de cada parte (campos do cadastro).
+      Cotas em vermelho: maior diâmetro do bojo e diâmetro da junção.
+      A altura da junção coincide com o topo do trecho do bojo (limite do destaque azul).
+    </p>
+  </div>
+  <div>
+    <p>No cadastro:</p>
+    <ul>
+      <li>perfil do trecho junto à base (bojo);</li>
+      <li>perfil do trecho junto à borda (pescoço);</li>
+      <li>maior diâmetro da peça (no bojo);</li>
+      <li>altura da junção bojo–pescoço;</li>
+      <li>diâmetro da junção bojo–pescoço.</li>
+    </ul>
+  </div>
+</div>
+
+<h3>Tipo de base</h3>
+<p>
+  Campo obrigatório no cadastro (lista no bloco das medidas do núcleo).
+  Num objeto novo a lista começa em branco; escolha Reta, Côncava ou Convexa
+  antes de gravar. O fundo, do centro até o anel da base, segue essa escolha.
+</p>
+<div class="row3">
+  <div class="panel">
+    <svg viewBox="0 0 180 120"><line x1="30" y1="70" x2="150" y2="70" stroke="#1a1512" stroke-width="3"/><text x="90" y="100" text-anchor="middle" font-size="12" font-family="Times New Roman, Times, serif">Reta — apoio plano</text></svg>
+  </div>
+  <div class="panel">
+    <svg viewBox="0 0 180 120"><path d="M 30 78 Q 90 38 150 78" fill="none" stroke="#1a1512" stroke-width="2.4"/><line x1="30" y1="78" x2="150" y2="78" stroke="#888" stroke-width="1"/><text x="90" y="104" text-anchor="middle" font-size="12" font-family="Times New Roman, Times, serif">Côncava — fundo reentrante</text></svg>
+  </div>
+  <div class="panel">
+    <svg viewBox="0 0 180 120"><path d="M 30 50 Q 90 90 150 50" fill="none" stroke="#1a1512" stroke-width="2.4"/><line x1="30" y1="78" x2="150" y2="78" stroke="#888" stroke-width="1"/><text x="90" y="104" text-anchor="middle" font-size="12" font-family="Times New Roman, Times, serif">Convexa — fundo saliente</text></svg>
+  </div>
+</div>
+</body>
+</html>

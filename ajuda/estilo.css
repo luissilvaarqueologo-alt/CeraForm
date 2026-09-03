@@ -1,0 +1,139 @@
+/*
+=======================================================================
+MÓDULO DE RECONSTITUIÇÃO GEOMÉTRICA DE CERÂMICAS - CERAFORM
+=======================================================================
+Autora (Idealização e Metodologia Arqueológica): Profa. Dra. Cláudia Alves de Oliveira
+Autor (Arquitetura e Desenvolvimento de Software): Luís Antônio da Silva
+Ano de Desenvolvimento: 2026
+Linguagem e Tecnologias: Python 3.11+ | NumPy | SQLite | Matplotlib | PyVista / Plotly
+Descrição Técnica:
+O CeraForm é um sistema computacional para modelagem morfológica, cálculo volumétrico e reconstituição 2D/3D de cerâmicas arqueológicas. Substitui a aproximação por arcos circulares legados por uma nova formulação matemática baseada em interpolação cúbica monótona (PCHIP de Fritsch–Carlson) e polinômios de Hermite, garantindo continuidade suave, ausência de oscilações espúrias e precisão nas descontinuidades reais (carenas).
+=======================================================================
+Licença e Termos de Uso
+CeraForm é disponibilizado gratuitamente para fins exclusivos de ensino, pesquisa e uso acadêmico não comercial.
+É expressamente vedado qualquer uso comercial, direto ou indireto, sem prévia autorização por escrito dos autores.
+Citação Obrigatória: Todo trabalho, publicação, relatório ou artigo derivado do uso deste software deve citar obrigatoriamente a fonte e seus autores.
+© 2026 Cláudia Alves de Oliveira & Luís Antônio da Silva. Todos os direitos reservados.
+=======================================================================
+*/
+
+:root {
+  --tinta: #1a1512;
+  --cota: #9a3412;
+  --papel: #f7f1e4;
+  --linha: #c4b8a8;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", Times, "Liberation Serif", serif;
+  font-size: 12pt;
+  line-height: 1.4;
+  color: var(--tinta);
+  background: #fff;
+}
+
+body { padding: 16px 22px 28px; max-width: 1100px; margin: 0 auto; }
+
+header.letterhead {
+  border-bottom: 2px solid var(--tinta);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  font-size: 9pt;
+  line-height: 1.35;
+  color: #333;
+}
+
+header.letterhead h1 {
+  font-size: 12pt;
+  letter-spacing: 0.04em;
+  margin: 0 0 6px;
+  text-transform: uppercase;
+}
+
+header.letterhead .meta {
+  display: block;
+  line-height: 1.45;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--linha);
+}
+
+nav a {
+  color: #1a56db;
+  text-decoration: none;
+  padding: 4px 10px;
+  border: 1px solid #c5d4ee;
+  background: #f4f7fc;
+}
+
+nav a:hover { background: #e8eef8; }
+
+nav a.atual {
+  color: #fff;
+  background: #1a56db;
+  border-color: #1a56db;
+}
+
+h2 { font-size: 16pt; margin: 0 0 8px; }
+h3 { font-size: 13pt; margin: 16px 0 8px; }
+h4 { font-size: 12pt; margin: 0 0 6px; }
+
+p.lead, p.caption { color: #444; }
+p.lead { margin: 0 0 12px; }
+p.caption { font-size: 11pt; margin: 6px 0 12px; }
+
+.panel {
+  border: 1px solid var(--linha);
+  background: var(--papel);
+  padding: 8px;
+}
+
+.fig { max-width: 640px; margin: 0 auto 8px; }
+svg { display: block; width: 100%; height: auto; }
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.cards a {
+  display: block;
+  border: 1px solid var(--linha);
+  padding: 12px 14px;
+  text-decoration: none;
+  color: inherit;
+  background: #faf8f4;
+  min-height: 8em;
+}
+
+.cards a:hover { border-color: #1a56db; background: #f4f7fc; }
+
+.cards h3 { margin: 0 0 6px; color: #1a56db; font-size: 13pt; }
+
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+
+.nota {
+  border: 1px solid #8aa;
+  background: #f3f7fa;
+  padding: 8px 12px;
+  margin: 12px 0;
+}
+
+@media (max-width: 800px) {
+  .cards, .row2, .row3 {
+    grid-template-columns: 1fr;
+  }
+}

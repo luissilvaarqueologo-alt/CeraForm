@@ -1,0 +1,34 @@
+# CeraForm - Reconstituição geométrica de cerâmicas
+# Copyright (c) 2026 Cláudia Alves de Oliveira & Luís Antônio da Silva
+# SPDX-License-Identifier: LicenseRef-CeraForm-Academic-NC
+#
+# Metadados de citação para GitHub e Zenodo (Citation File Format 1.2.0).
+# Filiação, ORCID e e-mail de Luís Antônio da Silva: preencher quando fornecidos.
+
+cff-version: 1.2.0
+title: CeraForm
+message: >-
+  Se utilizar este software, cite-o com os metadados deste arquivo.
+type: software
+abstract: >-
+  CeraForm é um sistema computacional para modelagem morfológica,
+  cálculo volumétrico e reconstituição 2D/3D de cerâmicas arqueológicas.
+  Substitui a aproximação por arcos circulares do programa legado por
+  interpolação cúbica monótona (PCHIP de Fritsch–Carlson) e polinômios
+  de Hermite. Destina-se a ensino, pesquisa e uso acadêmico não comercial.
+authors:
+  - family-names: Oliveira
+    given-names: "Cláudia Alves de"
+    affiliation: Universidade Federal de Pernambuco (UFPE)
+  - family-names: Silva
+    given-names: "Luís Antônio da"
+keywords:
+  - cerâmica arqueológica
+  - reconstituição geométrica
+  - volume
+  - PCHIP
+  - arqueometria
+  - Python
+version: "1.0.0"
+date-released: "2026-09-03"
+license: LicenseRef-CeraForm-Academic-NC

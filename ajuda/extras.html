@@ -1,0 +1,123 @@
+<!--
+=======================================================================
+MÓDULO DE RECONSTITUIÇÃO GEOMÉTRICA DE CERÂMICAS - CERAFORM
+=======================================================================
+Autora (Idealização e Metodologia Arqueológica): Profa. Dra. Cláudia Alves de Oliveira
+Autor (Arquitetura e Desenvolvimento de Software): Luís Antônio da Silva
+Ano de Desenvolvimento: 2026
+Linguagem e Tecnologias: Python 3.11+ | NumPy | SQLite | Matplotlib | PyVista / Plotly
+Descrição Técnica:
+O CeraForm é um sistema computacional para modelagem morfológica, cálculo volumétrico e reconstituição 2D/3D de cerâmicas arqueológicas. Substitui a aproximação por arcos circulares legados por uma nova formulação matemática baseada em interpolação cúbica monótona (PCHIP de Fritsch–Carlson) e polinômios de Hermite, garantindo continuidade suave, ausência de oscilações espúrias e precisão nas descontinuidades reais (carenas).
+=======================================================================
+Licença e Termos de Uso
+CeraForm é disponibilizado gratuitamente para fins exclusivos de ensino, pesquisa e uso acadêmico não comercial.
+É expressamente vedado qualquer uso comercial, direto ou indireto, sem prévia autorização por escrito dos autores.
+Citação Obrigatória: Todo trabalho, publicação, relatório ou artigo derivado do uso deste software deve citar obrigatoriamente a fonte e seus autores.
+© 2026 Cláudia Alves de Oliveira & Luís Antônio da Silva. Todos os direitos reservados.
+=======================================================================
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Ajuda — medições extras</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header class="letterhead">
+  <h1>Módulo de reconstituição geométrica de cerâmicas</h1>
+  <div class="meta">
+    Autora (Idealização e Metodologia Arqueológica): Profa. Dra. Cláudia Alves de Oliveira · 2026 ·
+    Autor (Arquitetura e Desenvolvimento de Software): Luís Antônio da Silva
+  </div>
+</header>
+<nav>
+  <a href="index.html">Início</a>
+  <a href="nucleo.html">Núcleo mínimo</a>
+  <a class="atual" href="extras.html">Medições extras</a>
+  <a href="adicionais.html">Carena, composto e planta</a>
+</nav>
+
+<h2>Medições extras — 1/4, 1/2 e 3/4 da altura total</h2>
+<p class="lead">
+  No desenho técnico, marque três planos horizontais na <strong>altura total</strong>
+  (da linha de apoio da base até a borda): a um quarto, à metade e a três quartos.
+  Em cada plano, leia o <strong>diâmetro interno</strong> (parede a parede, no corte).
+  Esses são os três campos do cadastro.
+</p>
+
+<div class="panel fig">
+<svg viewBox="0 0 560 500" role="img" aria-label="Diâmetros internos a um quarto, metade e três quartos da altura">
+  <defs>
+    <pattern id="mm" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#e4d9c8" stroke-width="0.4"/>
+    </pattern>
+    <pattern id="cm" width="50" height="50" patternUnits="userSpaceOnUse">
+      <rect width="50" height="50" fill="url(#mm)"/>
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#d2c4ae" stroke-width="0.7"/>
+    </pattern>
+    <pattern id="hachura" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#5a5348" stroke-width="0.55"/>
+    </pattern>
+    <clipPath id="esq"><rect x="0" y="0" width="280" height="500"/></clipPath>
+    <clipPath id="dir"><rect x="280" y="0" width="280" height="500"/></clipPath>
+  </defs>
+  <rect x="8" y="8" width="544" height="484" fill="url(#cm)" stroke="#b0a090"/>
+  <line x1="280" y1="40" x2="280" y2="430" stroke="#666" stroke-width="1" stroke-dasharray="10 4 2 4"/>
+  <path d="M 228 70 C 218 120, 158 195, 158 250 C 158 315, 190 368, 228 410 L 332 410 C 370 368, 402 315, 402 250 C 402 195, 342 120, 332 70 Z"
+        fill="#d7e3ec" stroke="#1a1512" stroke-width="1.6" clip-path="url(#dir)"/>
+  <path d="M 228 70 C 218 120, 158 195, 158 250 C 158 315, 190 368, 228 410 L 332 410 C 370 368, 402 315, 402 250 C 402 195, 342 120, 332 70 Z"
+        fill="url(#hachura)" stroke="none" clip-path="url(#esq)"/>
+  <path d="M 236 80 C 228 125, 172 200, 172 250 C 172 308, 200 358, 236 400 L 324 400 C 360 358, 388 308, 388 250 C 388 200, 332 125, 324 80 Z"
+        fill="#f7f1e4" stroke="#1a1512" stroke-width="1.2" clip-path="url(#esq)"/>
+  <path d="M 228 70 C 218 120, 158 195, 158 250 C 158 315, 190 368, 228 410"
+        fill="none" stroke="#1a1512" stroke-width="1.6"/>
+  <line x1="210" y1="410" x2="350" y2="410" stroke="#1a1512" stroke-width="2.4"/>
+  <!-- altura total à esquerda -->
+  <g stroke="#9a3412" fill="#9a3412" stroke-width="1.2">
+    <line x1="44" y1="70" x2="44" y2="410"/>
+    <polygon points="44,70 40.5,77 47.5,77"/><polygon points="44,410 40.5,403 47.5,403"/>
+  </g>
+  <text x="52" y="232" text-anchor="end" fill="#9a3412" font-size="12" font-family="Times New Roman, Times, serif" font-weight="700">altura</text>
+  <text x="52" y="248" text-anchor="end" fill="#9a3412" font-size="12" font-family="Times New Roman, Times, serif" font-weight="700">total</text>
+  <!-- planos 1/4 1/2 3/4 : base 410, borda 70, H=340 → 1/4=325, 1/2=240, 3/4=155 -->
+  <line x1="70" y1="325" x2="500" y2="325" stroke="#1a56db" stroke-dasharray="5 4" stroke-width="1"/>
+  <line x1="70" y1="240" x2="500" y2="240" stroke="#1a56db" stroke-dasharray="5 4" stroke-width="1"/>
+  <line x1="70" y1="155" x2="500" y2="155" stroke="#1a56db" stroke-dasharray="5 4" stroke-width="1"/>
+  <line x1="70" y1="70" x2="70" y2="410" stroke="#1a56db" stroke-width="1"/>
+  <circle cx="70" cy="410" r="3" fill="#1a56db"/>
+  <circle cx="70" cy="325" r="3" fill="#1a56db"/>
+  <circle cx="70" cy="240" r="3" fill="#1a56db"/>
+  <circle cx="70" cy="155" r="3" fill="#1a56db"/>
+  <circle cx="70" cy="70" r="3" fill="#1a56db"/>
+  <text x="78" y="414" fill="#1a56db" font-size="11" font-family="Times New Roman, Times, serif">0</text>
+  <text x="78" y="329" fill="#1a56db" font-size="11" font-family="Times New Roman, Times, serif">1/4</text>
+  <text x="78" y="244" fill="#1a56db" font-size="11" font-family="Times New Roman, Times, serif">1/2</text>
+  <text x="78" y="159" fill="#1a56db" font-size="11" font-family="Times New Roman, Times, serif">3/4</text>
+  <text x="78" y="66" fill="#1a56db" font-size="11" font-family="Times New Roman, Times, serif">borda</text>
+  <!-- diâmetros internos aproximados nesses planos -->
+  <g stroke="#9a3412" fill="#9a3412" stroke-width="1.3">
+    <line x1="198" y1="325" x2="362" y2="325"/>
+    <polygon points="198,325 205,321.5 205,328.5"/><polygon points="362,325 355,321.5 355,328.5"/>
+  </g>
+  <text x="430" y="329" fill="#9a3412" font-size="12" font-family="Times New Roman, Times, serif" font-weight="700">1/4 da altura</text>
+  <g stroke="#9a3412" fill="#9a3412" stroke-width="1.3">
+    <line x1="168" y1="240" x2="392" y2="240"/>
+    <polygon points="168,240 175,236.5 175,243.5"/><polygon points="392,240 385,236.5 385,243.5"/>
+  </g>
+  <text x="430" y="244" fill="#9a3412" font-size="12" font-family="Times New Roman, Times, serif" font-weight="700">1/2 da altura</text>
+  <g stroke="#9a3412" fill="#9a3412" stroke-width="1.3">
+    <line x1="214" y1="155" x2="346" y2="155"/>
+    <polygon points="214,155 221,151.5 221,158.5"/><polygon points="346,155 339,151.5 339,158.5"/>
+  </g>
+  <text x="430" y="159" fill="#9a3412" font-size="12" font-family="Times New Roman, Times, serif" font-weight="700">3/4 da altura</text>
+</svg>
+</div>
+<p class="caption">
+  Os três campos pedem só o diâmetro. A altura de cada plano o programa calcula a partir
+  da altura total. Não confunda a medição a 1/2 da altura com o diâmetro da cintura:
+  a cintura é o estreitamento do perfil (quando existir); a metade é um plano geométrico
+  a meia altura, mesmo que ali não haja cintura.
+</p>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CeraForm - Reconstituição geométrica de cerâmicas
+Copyright (c) 2026 Cláudia Alves de Oliveira & Luís Antônio da Silva
+SPDX-License-Identifier: LicenseRef-CeraForm-Academic-NC
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 620" width="1280" height="620" role="img" aria-label="CeraForm — arquitetura e fluxo">
+  <rect width="1280" height="620" fill="#fbf8f2"/>
+  <text x="640" y="36" text-anchor="middle" font-family="Times New Roman, Times, serif" font-size="22" font-weight="700" fill="#6A2D15">CeraForm — arquitetura e fluxo</text>
+  <text x="640" y="58" text-anchor="middle" font-family="Times New Roman, Times, serif" font-size="13" fill="#4a4540">Do desenho técnico no papel milimetrado à reconstituição 2D/3D, ao volume da cavidade e ao relatório por sítio</text>
+
+  <rect x="24" y="76" width="820" height="128" rx="8" fill="#F7F1E4" stroke="#6A2D15" stroke-width="1.4"/>
+  <text x="40" y="98" font-family="Times New Roman, Times, serif" font-size="14" font-weight="700" fill="#6A2D15">1. Interface (Tk)</text>
+  <g font-family="Times New Roman, Times, serif" font-size="13" text-anchor="middle">
+    <rect x="40" y="112" width="118" height="40" rx="6" fill="#fff" stroke="#6A2D15"/>
+    <text x="99" y="137" font-weight="700" fill="#1a1512">Cadastro</text>
+    <rect x="170" y="112" width="118" height="40" rx="6" fill="#fff" stroke="#6A2D15"/>
+    <text x="229" y="137" fill="#1a1512">Consulta</text>
+    <rect x="300" y="112" width="118" height="40" rx="6" fill="#fff" stroke="#6A2D15"/>
+    <text x="359" y="137" fill="#1a1512">Perfil 2D</text>
+    <rect x="430" y="112" width="118" height="40" rx="6" fill="#fff" stroke="#6A2D15"/>
+    <text x="489" y="137" fill="#1a1512">Desenho 3D</text>
+    <rect x="560" y="112" width="118" height="40" rx="6" fill="#fff" stroke="#6A2D15"/>
+    <text x="619" y="137" fill="#1a1512">Relatório</text>
+    <rect x="690" y="112" width="132" height="40" rx="6" fill="#fff" stroke="#6A2D15"/>
+    <text x="756" y="137" fill="#1a1512">Sobre e Ajuda</text>
+  </g>
+  <text x="40" y="178" font-family="Times New Roman, Times, serif" font-size="12" fill="#4a4540">Cotas internas em centímetro. Identificador: nome do sítio + número do desenho.</text>
+
+  <defs>
+    <marker id="seta-marrom" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6A2D15"/>
+    </marker>
+    <marker id="seta-verde" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1B7A3D"/>
+    </marker>
+    <marker id="seta-azul" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a56db"/>
+    </marker>
+  </defs>
+  <line x1="99" y1="152" x2="99" y2="228" stroke="#6A2D15" stroke-width="1.6" marker-end="url(#seta-marrom)"/>
+
+  <rect x="24" y="220" width="820" height="196" rx="8" fill="#E8F0E4" stroke="#1B7A3D" stroke-width="1.4"/>
+  <text x="40" y="242" font-family="Times New Roman, Times, serif" font-size="14" font-weight="700" fill="#1B7A3D">2. Núcleo de cálculo</text>
+  <g font-family="Times New Roman, Times, serif" font-size="12" text-anchor="middle" fill="#1a1512">
+    <rect x="40" y="256" width="186" height="92" rx="6" fill="#fff" stroke="#1B7A3D"/>
+    <text x="133" y="280" font-weight="700">Meridiano</text>
+    <text x="133" y="298">estações + PCHIP / Hermite</text>
+    <text x="133" y="314">ou segmentos retos</text>
+    <text x="133" y="332" fill="#4a4540">ceraform/perfil.py</text>
+
+    <rect x="246" y="256" width="186" height="92" rx="6" fill="#fff" stroke="#1B7A3D"/>
+    <text x="339" y="280" font-weight="700">Inferência de forma</text>
+    <text x="339" y="298">árvore de razões</text>
+    <text x="339" y="314">19 classes geométricas</text>
+    <text x="339" y="332" fill="#4a4540">ceraform/classificar.py</text>
+
+    <rect x="452" y="256" width="186" height="92" rx="6" fill="#fff" stroke="#1B7A3D"/>
+    <text x="545" y="280" font-weight="700">Volume da cavidade</text>
+    <text x="545" y="298">e faixa de tamanho</text>
+    <text x="545" y="332" fill="#4a4540">ceraform/volume.py</text>
+
+    <rect x="658" y="256" width="166" height="92" rx="6" fill="#fff" stroke="#1B7A3D"/>
+    <text x="741" y="280" font-weight="700">Centro de massa</text>
+    <text x="741" y="298">da casca e equilíbrio</text>
+    <text x="741" y="332" fill="#4a4540">ceraform/perfil.py</text>
+  </g>
+  <line x1="226" y1="302" x2="246" y2="302" stroke="#1B7A3D" stroke-width="1.6" marker-end="url(#seta-verde)"/>
+  <line x1="432" y1="302" x2="452" y2="302" stroke="#1B7A3D" stroke-width="1.6" marker-end="url(#seta-verde)"/>
+  <line x1="638" y1="302" x2="658" y2="302" stroke="#1B7A3D" stroke-width="1.6" marker-end="url(#seta-verde)"/>
+  <text x="40" y="378" font-family="Times New Roman, Times, serif" font-size="12" fill="#4a4540">A forma é sugerida pelo algoritmo e confirmada ou corrigida pelo pesquisador(a). Vale o valor atual (sem histórico de correção).</text>
+  <text x="40" y="396" font-family="Times New Roman, Times, serif" font-size="12" fill="#4a4540">Junção bojo–pescoço entra no meridiano (também com perfil Convexo), desde que a altura fique entre a barriga e a borda.</text>
+
+  <line x1="133" y1="348" x2="133" y2="448" stroke="#1a56db" stroke-width="1.6" marker-end="url(#seta-azul)"/>
+
+  <rect x="24" y="440" width="820" height="140" rx="8" fill="#E4EEF5" stroke="#1a56db" stroke-width="1.4"/>
+  <text x="40" y="462" font-family="Times New Roman, Times, serif" font-size="14" font-weight="700" fill="#1a56db">3. Persistência e saídas</text>
+  <g font-family="Times New Roman, Times, serif" font-size="12" text-anchor="middle" fill="#1a1512">
+    <rect x="40" y="476" width="186" height="80" rx="6" fill="#fff" stroke="#1a56db"/>
+    <text x="133" y="504" font-weight="700">SQLite</text>
+    <text x="133" y="522">ceraform.sqlite</text>
+    <text x="133" y="540" fill="#4a4540">ceraform/db.py</text>
+
+    <rect x="246" y="476" width="186" height="80" rx="6" fill="#fff" stroke="#1a56db"/>
+    <text x="339" y="504" font-weight="700">Corte 2D / PNG / PDF</text>
+    <text x="339" y="540" fill="#4a4540">ceraform/visual_2d.py</text>
+
+    <rect x="452" y="476" width="186" height="80" rx="6" fill="#fff" stroke="#1a56db"/>
+    <text x="545" y="504" font-weight="700">Sólido 3D oco / PNG</text>
+    <text x="545" y="540" fill="#4a4540">ceraform/vista_solido.py</text>
+
+    <rect x="658" y="476" width="166" height="80" rx="6" fill="#fff" stroke="#1a56db"/>
+    <text x="741" y="504" font-weight="700">Relatório por sítio</text>
+    <text x="741" y="522">HTML / CSV / PDF</text>
+    <text x="741" y="540" fill="#4a4540">ceraform/relatorio.py</text>
+  </g>
+  <line x1="226" y1="516" x2="246" y2="516" stroke="#1a56db" stroke-width="1.4" marker-end="url(#seta-azul)"/>
+  <line x1="432" y1="516" x2="452" y2="516" stroke="#1a56db" stroke-width="1.4" marker-end="url(#seta-azul)"/>
+  <line x1="638" y1="516" x2="658" y2="516" stroke="#1a56db" stroke-width="1.4" marker-end="url(#seta-azul)"/>
+
+  <rect x="860" y="76" width="396" height="504" rx="8" fill="#F7F1E4" stroke="#9a3412" stroke-width="1.4"/>
+  <text x="876" y="98" font-family="Times New Roman, Times, serif" font-size="14" font-weight="700" fill="#9a3412">Fluxo de trabalho</text>
+  <g font-family="Times New Roman, Times, serif" font-size="12" fill="#1a1512">
+    <rect x="876" y="112" width="364" height="52" rx="6" fill="#fff" stroke="#9a3412"/>
+    <text x="888" y="132">1. Ler o desenho técnico (diâmetros internos,</text>
+    <text x="888" y="148">alturas a partir do apoio).</text>
+
+    <rect x="876" y="172" width="364" height="68" rx="6" fill="#fff" stroke="#9a3412"/>
+    <text x="888" y="192">2. Núcleo: altura total, diâmetro da borda,</text>
+    <text x="888" y="208">maior diâmetro da peça, altura até o maior</text>
+    <text x="888" y="224">diâmetro, diâmetro da base.</text>
+
+    <rect x="876" y="248" width="364" height="52" rx="6" fill="#fff" stroke="#9a3412"/>
+    <text x="888" y="268">3. Opcional: 1/4, 1/2 e 3/4 da altura,</text>
+    <text x="888" y="284">junção bojo–pescoço, carena.</text>
+
+    <rect x="876" y="308" width="364" height="52" rx="6" fill="#fff" stroke="#9a3412"/>
+    <text x="888" y="328">4. Meridiano, sugestão de forma, volume,</text>
+    <text x="888" y="344">tamanho e centro de massa.</text>
+
+    <rect x="876" y="368" width="364" height="40" rx="6" fill="#fff" stroke="#9a3412"/>
+    <text x="888" y="392">5. Confirmar ou corrigir a forma. Gravar.</text>
+
+    <rect x="876" y="416" width="364" height="40" rx="6" fill="#fff" stroke="#9a3412"/>
+    <text x="888" y="440">6. Ver perfil 2D e sólido 3D; exportar.</text>
+
+    <rect x="876" y="464" width="364" height="52" rx="6" fill="#fff" stroke="#9a3412"/>
+    <text x="888" y="484">7. Relatório por sítio: frequência das</text>
+    <text x="888" y="500">formas e faixas de tamanho.</text>
+  </g>
+
+  <text x="24" y="608" font-family="Times New Roman, Times, serif" font-size="11" fill="#4a4540">Copyright (c) 2026 Cláudia Alves de Oliveira &amp; Luís Antônio da Silva · SPDX-License-Identifier: LicenseRef-CeraForm-Academic-NC</text>
+</svg>

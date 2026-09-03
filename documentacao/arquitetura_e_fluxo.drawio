@@ -1,0 +1,154 @@
+<!--
+CeraForm - Reconstituição geométrica de cerâmicas
+Copyright (c) 2026 Cláudia Alves de Oliveira & Luís Antônio da Silva
+SPDX-License-Identifier: LicenseRef-CeraForm-Academic-NC
+-->
+<mxfile host="app.diagrams.net" agent="CeraForm" version="24.0.0" type="device">
+  <diagram id="ceraform-arquitetura-fluxo" name="Arquitetura e fluxo">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="titulo" value="CeraForm — arquitetura e fluxo" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Times New Roman;fontSize=22;fontStyle=1;fontColor=#6A2D15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="16" width="1520" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitulo" value="Do desenho técnico no papel milimetrado à reconstituição 2D/3D, ao volume da cavidade e ao relatório por sítio" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Times New Roman;fontSize=13;fontColor=#4a4540;" vertex="1" parent="1">
+          <mxGeometry x="40" y="48" width="1520" height="28" as="geometry" />
+        </mxCell>
+
+        <mxCell id="faixa-ui" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F7F1E4;strokeColor=#6A2D15;strokeWidth=1.4;" vertex="1" parent="1">
+          <mxGeometry x="40" y="88" width="980" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl-ui" value="1. Interface (Tk)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Times New Roman;fontSize=14;fontStyle=1;fontColor=#6A2D15;" vertex="1" parent="1">
+          <mxGeometry x="56" y="96" width="400" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="ui-cad" value="Cadastro" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6A2D15;fontFamily=Times New Roman;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="132" width="140" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="ui-con" value="Consulta" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6A2D15;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="220" y="132" width="140" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="ui-2d" value="Perfil 2D" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6A2D15;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="380" y="132" width="140" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="ui-3d" value="Desenho 3D" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6A2D15;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="540" y="132" width="140" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="ui-rel" value="Relatório" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6A2D15;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="700" y="132" width="140" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="ui-sob" value="Sobre e Ajuda" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6A2D15;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="860" y="132" width="140" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="ui-nota" value="Cotas internas em centímetro. Identificador: nome do sítio + número do desenho." style="text;html=1;strokeColor=none;fillColor=none;align=left;fontFamily=Times New Roman;fontSize=12;fontColor=#4a4540;" vertex="1" parent="1">
+          <mxGeometry x="60" y="188" width="920" height="36" as="geometry" />
+        </mxCell>
+
+        <mxCell id="faixa-nuc" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F0E4;strokeColor=#1B7A3D;strokeWidth=1.4;" vertex="1" parent="1">
+          <mxGeometry x="40" y="260" width="980" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl-nuc" value="2. Núcleo de cálculo" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontFamily=Times New Roman;fontSize=14;fontStyle=1;fontColor=#1B7A3D;" vertex="1" parent="1">
+          <mxGeometry x="56" y="268" width="400" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="n-per" value="Meridiano&#xa;estações + PCHIP / Hermite&#xa;ou segmentos retos&#xa;ceraform/perfil.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B7A3D;fontFamily=Times New Roman;fontSize=12;align=center;" vertex="1" parent="1">
+          <mxGeometry x="60" y="304" width="210" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="n-cls" value="Inferência de forma&#xa;árvore de razões&#xa;19 classes geométricas&#xa;ceraform/classificar.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B7A3D;fontFamily=Times New Roman;fontSize=12;align=center;" vertex="1" parent="1">
+          <mxGeometry x="300" y="304" width="210" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="n-vol" value="Volume da cavidade&#xa;e faixa de tamanho&#xa;ceraform/volume.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B7A3D;fontFamily=Times New Roman;fontSize=12;align=center;" vertex="1" parent="1">
+          <mxGeometry x="540" y="304" width="210" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="n-cm" value="Centro de massa da casca&#xa;e equilíbrio da base&#xa;ceraform/perfil.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B7A3D;fontFamily=Times New Roman;fontSize=12;align=center;" vertex="1" parent="1">
+          <mxGeometry x="780" y="304" width="210" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="n-nota" value="A forma é sugerida pelo algoritmo e confirmada ou corrigida pelo pesquisador(a). Vale o valor atual (sem histórico de correção)." style="text;html=1;strokeColor=none;fillColor=none;align=left;fontFamily=Times New Roman;fontSize=12;fontColor=#4a4540;" vertex="1" parent="1">
+          <mxGeometry x="60" y="404" width="920" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e-cad-per" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#6A2D15;strokeWidth=1.6;" edge="1" parent="1" source="ui-cad" target="n-per">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-per-cls" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#1B7A3D;strokeWidth=1.6;" edge="1" parent="1" source="n-per" target="n-cls">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-per-vol" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#1B7A3D;strokeWidth=1.6;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="n-per" target="n-vol">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="218" y="410" />
+              <mxPoint x="592" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-per-cm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#1B7A3D;strokeWidth=1.6;" edge="1" parent="1" source="n-per" target="n-cm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="faixa-sai" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E4EEF5;strokeColor=#1a56db;strokeWidth=1.4;" vertex="1" parent="1">
+          <mxGeometry x="40" y="484" width="980" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl-sai" value="3. Persistência e saídas" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontFamily=Times New Roman;fontSize=14;fontStyle=1;fontColor=#1a56db;" vertex="1" parent="1">
+          <mxGeometry x="56" y="492" width="400" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s-db" value="SQLite&#xa;ceraform.sqlite&#xa;ceraform/db.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1a56db;fontFamily=Times New Roman;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="528" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s-2d" value="Corte 2D / PNG / PDF&#xa;ceraform/visual_2d.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1a56db;fontFamily=Times New Roman;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="260" y="528" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s-3d" value="Sólido 3D oco / PNG&#xa;ceraform/vista_solido.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1a56db;fontFamily=Times New Roman;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="490" y="528" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s-rep" value="Relatório por sítio&#xa;HTML / CSV / PDF&#xa;ceraform/relatorio.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1a56db;fontFamily=Times New Roman;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="720" y="528" width="200" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e-cad-db" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#1a56db;strokeWidth=1.6;" edge="1" parent="1" source="ui-cad" target="s-db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-per-2d" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#1a56db;strokeWidth=1.6;" edge="1" parent="1" source="n-per" target="s-2d">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-per-3d" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#1a56db;strokeWidth=1.6;" edge="1" parent="1" source="n-per" target="s-3d">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-db-rep" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#1a56db;strokeWidth=1.6;" edge="1" parent="1" source="s-db" target="s-rep">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="faixa-fluxo" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FBF8F2;strokeColor=#9a3412;strokeWidth=1.4;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="88" width="520" height="546" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl-fluxo" value="Fluxo de trabalho" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontFamily=Times New Roman;fontSize=14;fontStyle=1;fontColor=#9a3412;" vertex="1" parent="1">
+          <mxGeometry x="1056" y="96" width="480" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="f1" value="1. Ler o desenho técnico (diâmetros internos, alturas a partir do apoio)." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9a3412;align=left;spacingLeft=8;fontFamily=Times New Roman;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1056" y="132" width="488" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="f2" value="2. Preencher o núcleo: altura total, diâmetro da borda, maior diâmetro da peça, altura até o maior diâmetro, diâmetro da base." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9a3412;align=left;spacingLeft=8;fontFamily=Times New Roman;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1056" y="190" width="488" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="f3" value="3. Opcional: medições extras (1/4, 1/2, 3/4 da altura), junção bojo–pescoço, carena." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9a3412;align=left;spacingLeft=8;fontFamily=Times New Roman;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1056" y="256" width="488" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="f4" value="4. O programa monta o meridiano e sugere a forma; calcula volume, tamanho e centro de massa." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9a3412;align=left;spacingLeft=8;fontFamily=Times New Roman;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1056" y="318" width="488" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="f5" value="5. Confirmar ou corrigir a forma. Gravar (SQLite)." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9a3412;align=left;spacingLeft=8;fontFamily=Times New Roman;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1056" y="380" width="488" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="f6" value="6. Ver o perfil 2D e o sólido 3D; exportar PNG/PDF." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9a3412;align=left;spacingLeft=8;fontFamily=Times New Roman;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1056" y="438" width="488" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="f7" value="7. Relatório por sítio: frequência das formas e faixas de tamanho." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9a3412;align=left;spacingLeft=8;fontFamily=Times New Roman;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1056" y="496" width="488" height="48" as="geometry" />
+        </mxCell>
+
+        <mxCell id="rodape" value="Copyright (c) 2026 Cláudia Alves de Oliveira &amp; Luís Antônio da Silva · SPDX-License-Identifier: LicenseRef-CeraForm-Academic-NC" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontFamily=Times New Roman;fontSize=11;fontColor=#4a4540;" vertex="1" parent="1">
+          <mxGeometry x="40" y="650" width="1520" height="28" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

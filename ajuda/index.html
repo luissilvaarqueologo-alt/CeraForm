@@ -1,0 +1,76 @@
+<!--
+=======================================================================
+MÓDULO DE RECONSTITUIÇÃO GEOMÉTRICA DE CERÂMICAS - CERAFORM
+=======================================================================
+Autora (Idealização e Metodologia Arqueológica): Profa. Dra. Cláudia Alves de Oliveira
+Autor (Arquitetura e Desenvolvimento de Software): Luís Antônio da Silva
+Ano de Desenvolvimento: 2026
+Linguagem e Tecnologias: Python 3.11+ | NumPy | SQLite | Matplotlib | PyVista / Plotly
+Descrição Técnica:
+O CeraForm é um sistema computacional para modelagem morfológica, cálculo volumétrico e reconstituição 2D/3D de cerâmicas arqueológicas. Substitui a aproximação por arcos circulares legados por uma nova formulação matemática baseada em interpolação cúbica monótona (PCHIP de Fritsch–Carlson) e polinômios de Hermite, garantindo continuidade suave, ausência de oscilações espúrias e precisão nas descontinuidades reais (carenas).
+=======================================================================
+Licença e Termos de Uso
+CeraForm é disponibilizado gratuitamente para fins exclusivos de ensino, pesquisa e uso acadêmico não comercial.
+É expressamente vedado qualquer uso comercial, direto ou indireto, sem prévia autorização por escrito dos autores.
+Citação Obrigatória: Todo trabalho, publicação, relatório ou artigo derivado do uso deste software deve citar obrigatoriamente a fonte e seus autores.
+© 2026 Cláudia Alves de Oliveira & Luís Antônio da Silva. Todos os direitos reservados.
+=======================================================================
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Ajuda — de onde tirar cada medida</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header class="letterhead">
+  <h1>Módulo de reconstituição geométrica de cerâmicas</h1>
+  <div class="meta">
+    Autora (Idealização e Metodologia Arqueológica): Profa. Dra. Cláudia Alves de Oliveira · 2026 ·
+    Autor (Arquitetura e Desenvolvimento de Software): Luís Antônio da Silva
+  </div>
+</header>
+<nav>
+  <a class="atual" href="index.html">Início</a>
+  <a href="nucleo.html">Núcleo mínimo</a>
+  <a href="extras.html">Medições extras</a>
+  <a href="adicionais.html">Carena, composto e planta</a>
+</nav>
+
+<h2>De onde tirar cada medida ?</h2>
+<p class="lead">
+  A fonte das medidas é o <strong>desenho técnico de reconstituição</strong> do objeto
+  (perfil no papel milimetrado), não a peça física. Leia as cotas no desenho:
+  diâmetros <strong>internos</strong> (da parede interna à parede interna, no corte)
+  e alturas a partir da linha de apoio da base. Unidade de entrada no cadastro: centímetro
+  (o papel milimetrado mantém a grade em milímetro; converta as cotas ao transcrever).
+  Separador decimal: <strong>vírgula ou ponto</strong> (ex.: 12,5 ou 12.5 — o programa aceita os dois).
+  Máximo de <strong>3 casas decimais</strong> por campo.
+</p>
+<p>
+  À esquerda do eixo o desenho mostra o <strong>corte</strong> (parede hachurada);
+  à direita, a <strong>vista externa</strong>. O eixo de revolução é a traço-e-ponto.
+</p>
+
+<div class="cards">
+  <a href="nucleo.html">
+    <h3>Núcleo mínimo</h3>
+    <p>Altura total, diâmetro da borda, maior diâmetro da peça, altura da base até o maior diâmetro, diâmetro da base, tipo de base e perfil geométrico.</p>
+  </a>
+  <a href="extras.html">
+    <h3>Medições extras</h3>
+    <p>Diâmetro interno a 1/4, a 1/2 e a 3/4 da altura total, lidos em planos horizontais no perfil.</p>
+  </a>
+  <a href="adicionais.html">
+    <h3>Carena, composto e planta</h3>
+    <p>Cintura, espessura da parede, vista de cima, carena, segunda quebra, junção bojo–pescoço e tipo de base.</p>
+  </a>
+</div>
+
+<div class="nota">
+  No cadastro, o botão <strong>Ajuda</strong> abre estas páginas. Use o desenho da peça
+  (o mesmo que originou o número do desenho) e transcreva as cotas para os campos.
+</div>
+</body>
+</html>

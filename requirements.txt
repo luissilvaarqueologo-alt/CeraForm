@@ -1,0 +1,26 @@
+# =======================================================================
+# MÓDULO DE RECONSTITUIÇÃO GEOMÉTRICA DE CERÂMICAS - CERAFORM
+# =======================================================================
+# Autora (Idealização e Metodologia Arqueológica): Profa. Dra. Cláudia Alves de Oliveira
+# Autor (Arquitetura e Desenvolvimento de Software): Luís Antônio da Silva
+# Ano de Desenvolvimento: 2026
+# Linguagem e Tecnologias: Python 3.11+ | NumPy | SQLite | Matplotlib | PyVista / Plotly
+# Descrição Técnica:
+# O CeraForm é um sistema computacional para modelagem morfológica, cálculo volumétrico e reconstituição 2D/3D de cerâmicas arqueológicas. Substitui a aproximação por arcos circulares legados por uma nova formulação matemática baseada em interpolação cúbica monótona (PCHIP de Fritsch–Carlson) e polinômios de Hermite, garantindo continuidade suave, ausência de oscilações espúrias e precisão nas descontinuidades reais (carenas).
+# =======================================================================
+# Licença e Termos de Uso
+# CeraForm é disponibilizado gratuitamente para fins exclusivos de ensino, pesquisa e uso acadêmico não comercial.
+# É expressamente vedado qualquer uso comercial, direto ou indireto, sem prévia autorização por escrito dos autores.
+# Citação Obrigatória: Todo trabalho, publicação, relatório ou artigo derivado do uso deste software deve citar obrigatoriamente a fonte e seus autores.
+# © 2026 Cláudia Alves de Oliveira & Luís Antônio da Silva. Todos os direitos reservados.
+# =======================================================================
+#
+# Dependências de execução a partir do código-fonte (Python 3.11+).
+# O arquivo requirements-windows.txt trava versões usadas no instalador Windows.
+
+numpy>=1.26
+scipy>=1.11
+matplotlib>=3.8
+pillow>=10.0
+pyvista>=0.44
+plotly>=5.18

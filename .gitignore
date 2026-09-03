@@ -1,0 +1,37 @@
+# Artefatos gerados e instalador Windows (não versionar)
+dist/
+build/
+*.spec
+!/CeraForm.spec
+
+# Depósito INPI: pasta e zips ficam só no disco local (e-Regulação)
+CeraForm_INPI/
+CeraForm_INPI.zip
+CeraForm_Fonte_INPI.zip
+CeraForm_fonte_INPI.zip
+
+# Ambientes virtuais
+venv/
+.venv/
+env/
+ENV/
+
+# Caches e temporários
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.eggs/
+
+# Banco e rastros gerados em tempo de execução
+ceraform.sqlite
+ceraform_erro.txt
+ceraform_inicio.txt
+
+# Sistema e editor
+.DS_Store
+Thumbs.db
+.cursor/

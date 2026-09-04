@@ -58,7 +58,7 @@ Documentação de funcionamento (fórmulas, catálogo de formas, fluxo na tela):
 
 O instalador/executável **não** entra no histórico Git (pasta `dist/`).
 
-Baixe o arquivo `CeraForm_Windows.zip` na aba **Releases** deste repositório no GitHub, na publicação **v1.0.0**. Descompacte e execute `CeraForm.exe`.
+Baixe o arquivo `CeraForm_Windows.zip` na [Release v1.0.0](https://github.com/luissilvaarqueologo-alt/CeraForm/releases/tag/v1.0.0). Descompacte e execute `CeraForm.exe`.
 
 ## Registro no INPI
 
@@ -70,11 +70,12 @@ O número do registro, quando publicado pelo INPI, deve ser anotado neste README
 
 ## Citação acadêmica
 
-Todo trabalho que utilize resultados gerados pelo CeraForm deve citar o programa e os autores. O GitHub e o Zenodo leem o arquivo `CITATION.cff` na raiz.
+Todo trabalho que utilize resultados gerados pelo CeraForm deve citar o programa e os autores. O GitHub lê o arquivo `CITATION.cff` na raiz.
 
-OLIVEIRA, Cláudia Alves de; SILVA, Luís Antônio da. **CERAFORM**: sistema computacional para reconstituição geométrica, modelagem morfológica e cálculo volumétrico de cerâmicas arqueológicas. Versão 1.0. Recife: [s. n.], 2026. Programa de computador. Python 3.11+, NumPy, SQLite, Matplotlib, PyVista/Plotly.
+OLIVEIRA, Cláudia Alves de; SILVA, Luís Antônio da. **CeraForm**. Versão 1.0.0. [S. l.]: Zenodo, 2026. DOI: [10.5281/zenodo.22288899](https://doi.org/10.5281/zenodo.22288899). Disponível em: [https://doi.org/10.5281/zenodo.22288899](https://doi.org/10.5281/zenodo.22288899).
 
-O DOI permanente será o atribuído pelo Zenodo à versão 1.0.0, após a integração com a Release do GitHub. Quando existir, substitua esta frase pelo DOI.
+Registro no Zenodo: [https://zenodo.org/records/22288899](https://zenodo.org/records/22288899).  
+DOI conceitual (todas as versões): [10.5281/zenodo.22288898](https://doi.org/10.5281/zenodo.22288898).
 
 ## Autoria
 

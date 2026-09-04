@@ -25,3 +25,8 @@ keywords:
   - PCHIP
   - arqueometria
   - Python
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22288899"
+    description: "Versão 1.0.0 no Zenodo"
+

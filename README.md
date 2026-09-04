@@ -20,6 +20,7 @@ Citação Obrigatória: Todo trabalho, publicação, relatório ou artigo deriva
 # CeraForm
 
 **CeraForm** é um sistema computacional para reconstituição geométrica de cerâmicas arqueológicas: modelagem morfológica, cálculo do volume da cavidade e visualização 2D/3D a partir de cotas internas medidas em centímetro.
+
 O usuário informa as medidas do objeto reconstituído. O programa monta o meridiano da parede, **sugere** uma forma do catálogo de 19 classes, calcula volume e faixa de tamanho, mostra o corte 2D e o sólido 3D, e grava o registro em SQLite. A forma final é assinada pelos dois: o algoritmo sugere; o usuário confirma ou corrige.
 
 Esta versão reconstitui o perfil com **interpolação cúbica monótona** (PCHIP de Fritsch–Carlson) e **polinômios de Hermite**, e não com arcos circulares.
@@ -46,10 +47,8 @@ O número do registro, quando publicado pelo INPI, deve ser anotado neste README
 
 Todo trabalho que utilize resultados gerados pelo CeraForm deve citar o programa e os autores. O GitHub lê o arquivo `CITATION.cff` na raiz.
 
-OLIVEIRA, Cláudia Alves de; SILVA, Luís Antônio da. **CeraForm**. Versão 1.0.0. [S. l.]: Zenodo, 2026. DOI: [10.5281/zenodo.22288899](https://doi.org/10.5281/zenodo.22288899). Disponível em: [https://doi.org/10.5281/zenodo.22288899](https://doi.org/10.5281/zenodo.22288899).
+OLIVEIRA, Cláudia Alves de; SILVA, Luís Antônio da. CERAFORM: sistema computacional para reconstituição geométrica, modelagem morfológica e cálculo volumétrico de cerâmicas arqueológicas. Versão 1.0. Recife: [s. n.], 2026. Programa de computador. Python 3.11+, NumPy, SQLite, Matplotlib, PyVista/Plotly.
 
-Registro no Zenodo: [https://zenodo.org/records/22288899](https://zenodo.org/records/22288899).  
-DOI conceitual (todas as versões): [10.5281/zenodo.22288898](https://doi.org/10.5281/zenodo.22288898).
 
 ## Autoria
 

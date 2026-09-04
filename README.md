@@ -20,10 +20,9 @@ Citação Obrigatória: Todo trabalho, publicação, relatório ou artigo deriva
 # CeraForm
 
 **CeraForm** é um sistema computacional para reconstituição geométrica de cerâmicas arqueológicas: modelagem morfológica, cálculo do volume da cavidade e visualização 2D/3D a partir de cotas internas medidas em centímetro.
+O usuário informa as medidas do objeto reconstituído. O programa monta o meridiano da parede, **sugere** uma forma do catálogo de 19 classes, calcula volume e faixa de tamanho, mostra o corte 2D e o sólido 3D, e grava o registro em SQLite. A forma final é assinada pelos dois: o algoritmo sugere; o usuário confirma ou corrige.
 
-A pesquisadora informa as medidas do objeto reconstituído. O programa monta o meridiano da parede, **sugere** uma forma do catálogo de 19 classes, calcula volume e faixa de tamanho, mostra o corte 2D e o sólido 3D, e grava o registro em SQLite. A forma final é assinada pelos dois: o algoritmo sugere; a pesquisadora confirma ou corrige.
-
-O programa de 1994 (VASOS.EXE) é inspiração conceitual. Esta versão reconstitui o perfil com **interpolação cúbica monótona** (PCHIP de Fritsch–Carlson) e **polinômios de Hermite**, e não com arcos circulares.
+Esta versão reconstitui o perfil com **interpolação cúbica monótona** (PCHIP de Fritsch–Carlson) e **polinômios de Hermite**, e não com arcos circulares.
 
 Versão **1.0.0**. Licença acadêmica não comercial (`license.txt`).
 
@@ -35,24 +34,6 @@ Para **usar** o CeraForm, baixe só o executável:
 
 Descompacte a pasta e execute `CeraForm.exe`. Não é preciso instalar Python.
 
-O código-fonte no GitHub e o arquivo no [Zenodo](https://doi.org/10.5281/zenodo.22288899) servem ao registro acadêmico e ao INPI, não ao uso do dia a dia.
-
-## Quem for desenvolver (código-fonte)
-
-Python 3.11 ou superior e Tkinter. Na pasta raiz do repositório:
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate          # Windows: .venv\Scripts\activate
-python3 -m pip install -r requirements.txt
-python3 run_desktop.py
-```
-
-Para reproduzir o ambiente do instalador Windows, use também `requirements-windows.txt`.
-
-Provas: `python3 -m unittest discover -s tests -q`.
-
-Documentação de funcionamento: `documentacao/como_o_sistema_funciona.md`. Ajuda embarcada: pasta `ajuda/`.
 ## Registro no INPI
 
 O depósito de programa de computador no INPI usa o **código-fonte** (hash do zip `CeraForm_fonte_INPI.zip`), não o instalador Windows. A pasta e o zip do INPI ficam fora deste repositório; o conteúdo depositado corresponde à versão 1.0.0 aqui etiquetada.

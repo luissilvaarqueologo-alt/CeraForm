@@ -31,6 +31,9 @@ ceraform.sqlite
 ceraform_erro.txt
 ceraform_inicio.txt
 
+# Malhas 3D de trabalho (arquivos grandes; ficam só no disco local)
+CeraForm_3D_Project/Bordas_3D_PLY/*.ply
+
 # Sistema e editor
 .DS_Store
 Thumbs.db

@@ -27,15 +27,19 @@ O programa de 1994 (VASOS.EXE) é inspiração conceitual. Esta versão reconsti
 
 Versão **1.0.0**. Licença acadêmica não comercial (`license.txt`).
 
-## Requisitos
+## Download (Windows)
 
-- Python 3.11 ou superior
-- Linux, macOS ou Windows
-- Tkinter (interface gráfica; na maioria das instalações Python já vem incluído)
+Para **usar** o CeraForm, baixe só o executável:
 
-## Executar a partir do código-fonte
+**[CeraForm_Windows.zip](https://github.com/luissilvaarqueologo-alt/CeraForm/releases/download/v1.0.0/CeraForm_Windows.zip)** — na [Release v1.0.0](https://github.com/luissilvaarqueologo-alt/CeraForm/releases/tag/v1.0.0).
 
-Na pasta raiz do repositório:
+Descompacte a pasta e execute `CeraForm.exe`. Não é preciso instalar Python.
+
+O código-fonte no GitHub e o arquivo no [Zenodo](https://doi.org/10.5281/zenodo.22288899) servem ao registro acadêmico e ao INPI, não ao uso do dia a dia.
+
+## Quem for desenvolver (código-fonte)
+
+Python 3.11 ou superior e Tkinter. Na pasta raiz do repositório:
 
 ```bash
 python3 -m venv .venv
@@ -44,22 +48,11 @@ python3 -m pip install -r requirements.txt
 python3 run_desktop.py
 ```
 
-No Windows, se for reproduzir o ambiente do instalador, use também as versões travadas em `requirements-windows.txt`.
+Para reproduzir o ambiente do instalador Windows, use também `requirements-windows.txt`.
 
-Provas automatizadas:
+Provas: `python3 -m unittest discover -s tests -q`.
 
-```bash
-python3 -m unittest discover -s tests -q
-```
-
-Documentação de funcionamento (fórmulas, catálogo de formas, fluxo na tela): `documentacao/como_o_sistema_funciona.md`. Ajuda embarcada: pasta `ajuda/`.
-
-## Versão compilada para Windows
-
-O instalador/executável **não** entra no histórico Git (pasta `dist/`).
-
-Baixe o arquivo `CeraForm_Windows.zip` na [Release v1.0.0](https://github.com/luissilvaarqueologo-alt/CeraForm/releases/tag/v1.0.0). Descompacte e execute `CeraForm.exe`.
-
+Documentação de funcionamento: `documentacao/como_o_sistema_funciona.md`. Ajuda embarcada: pasta `ajuda/`.
 ## Registro no INPI
 
 O depósito de programa de computador no INPI usa o **código-fonte** (hash do zip `CeraForm_fonte_INPI.zip`), não o instalador Windows. A pasta e o zip do INPI ficam fora deste repositório; o conteúdo depositado corresponde à versão 1.0.0 aqui etiquetada.
